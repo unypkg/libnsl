@@ -51,9 +51,9 @@ echo "newer" >release-"$pkgname"
 
 git_clone_source_repo
 
-cd "$pkg_git_repo_dir" || exit
-./autogen.sh
-cd /uny/sources || exit
+#cd "$pkg_git_repo_dir" || exit
+#./autogen.sh
+#cd /uny/sources || exit
 
 archiving_source
 
@@ -76,6 +76,8 @@ get_include_paths
 ### Start of individual build script
 
 unset LD_RUN_PATH
+
+./autogen.sh
 
 ./configure \
     --prefix=/uny/pkg/"$pkgname"/"$pkgver" \
